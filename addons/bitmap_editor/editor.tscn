@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfvil05c2giuc"]
+
+[ext_resource type="Script" path="res://addons/bitmap_editor/editor.gd" id="1_jbnsg"]
+[ext_resource type="Script" path="res://addons/bitmap_editor/editor_texture.gd" id="2_d1hw2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v50ww"]
+content_margin_left = 32.0
+content_margin_top = 32.0
+content_margin_right = 32.0
+content_margin_bottom = 32.0
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Editor" type="PanelContainer"]
+offset_right = 54.0
+offset_bottom = 30.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v50ww")
+script = ExtResource("1_jbnsg")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Resizer" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/Resizer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+text = "Size"
+
+[node name="Vector" type="VBoxContainer" parent="VBox/Resizer"]
+layout_mode = 2
+
+[node name="X" type="SpinBox" parent="VBox/Resizer/Vector"]
+layout_mode = 2
+prefix = "x:"
+select_all_on_focus = true
+
+[node name="Y" type="SpinBox" parent="VBox/Resizer/Vector"]
+layout_mode = 2
+prefix = "y:"
+select_all_on_focus = true
+
+[node name="Texture" type="ColorRect" parent="VBox"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_d1hw2")
+
+[node name="Shortcuts" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="Fill" type="Button" parent="VBox/Shortcuts"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Fill"
+
+[node name="Clear" type="Button" parent="VBox/Shortcuts"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Clear
+"
