@@ -1,5 +1,3 @@
-# BitMap editor
+Allows editing BitMap resources directly from the inspector.
 
-Adds an editor to the inspector for BitMap resources.
-
-Use left-click to set bits to true, right-click to set them to false.
+Left click sets bits to true, right click sets them to false.
